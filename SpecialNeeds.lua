@@ -1,57 +1,85 @@
-local watchedPlayers = {
-    ["Judokick"] = "Interface\\AddOns\\SpecialNeeds\\audio\\ack.mp3",
-    ["Prosztakuksi"] = "Interface\\AddOns\\SpecialNeeds\\audio\\fahhhhhhhhhhhhhh.mp3",
-    ["Renaldoh"] = "Interface\\AddOns\\SpecialNeeds\\audio\\fahhhhhhhhhhhhhh.mp3",
-    ["Plaguebeard"] = "Interface\\AddOns\\SpecialNeeds\\audio\\d-meghal-jobban.mp3",
-    ["Rezestóni"] = "Interface\\AddOns\\SpecialNeeds\\audio\\d-meghal-jobban.mp3",
-    ["Messacree"] = "Interface\\AddOns\\SpecialNeeds\\audio\\d-meghal-jobban.mp3",
-    ["Birdlady"] = "Interface\\AddOns\\SpecialNeeds\\audio\\d-meghal-jobban.mp3",
-    ["Itacho"] = "Interface\\AddOns\\SpecialNeeds\\audio\\d-meghal-jobban.mp3",
-}
-
 local frame = CreateFrame("Frame")
---local SOUND_COOLDOWN = 1.5
---local lastSoundTime = 0
+local watchedPlayersInGroup = 0
 
-local function IsPlayerInGroup(playerName)
-    local numMembers = GetNumGroupMembers()
+SpecialNeedsDB = SpecialNeedsDB or {}
+SpecialNeedsDB.enabled = SpecialNeedsDB.enabled ~= false
+
+RegisterAddonMessagePrefix("SpecialNeeds")
+
+local function CountWatchedPlayersInGroup()
+    local count = 0
 
     if IsInRaid() then
-        for i = 1, numMembers do
+        for i = 1, GetNumGroupMembers() do
             local name = GetRaidRosterInfo(i)
-            if name == playerName then
-                return true
+
+            if WatchedPlayers[name] then
+                count = count + 1
             end
         end
     else
-        if UnitName("player") == playerName then
-            return true
+        -- Include yourself
+        local player = UnitName("player")
+        if WatchedPlayers[player] then
+            count = count + 1
         end
 
+        -- Party members
         for i = 1, GetNumSubgroupMembers() do
-            if UnitName("party"..i) == playerName then
-                return true
+            local name = UnitName("party" .. i)
+
+            if WatchedPlayers[name] then
+                count = count + 1
             end
         end
     end
 
-    return false
+    return count
 end
 
---local function PlayPlayerSound(sound)
---    local now = GetTime()
---
---    if now - lastSoundTime < SOUND_COOLDOWN then
---        return
---    end
---
---    lastSoundTime = now
---    PlaySoundFile(sound, "Master")
---end
+local function UpdateWatchedPlayersInGroup()
+    watchedPlayersInGroup = CountWatchedPlayersInGroup()
+end
 
+local function playTheSong(fileName)
+    if SpecialNeedsDB.enabled then
+        PlaySoundFile(fileName, "master")
+    end
+end
+
+frame:RegisterEvent("GROUP_ROSTER_UPDATE")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+frame:RegisterEvent("CHAT_MSG_ADDON")
 
 frame:SetScript("OnEvent", function(self, event, ...)
+    if event == "GROUP_ROSTER_UPDATE" or event == "PLAYER_ENTERING_WORLD" then
+        UpdateWatchedPlayersInGroup()
+        return
+    end
+
+    if event == "CHAT_MSG_ADDON" then
+        local prefix, message, channel, sender = ...
+
+        if prefix ~= "SpecialNeeds" then
+            return
+        end
+
+        local senderName = sender:match("^[^-]+")
+
+        if not IsLeaderOrAssistant(senderName) then
+            print("not lead skipping")
+            return
+        end
+
+        local command, index = strsplit(";", message)
+
+        if command == "PLAY" then
+            PlaySnSound(index)
+        end
+
+        return
+    end
 
     local timestamp,
           subEvent,
@@ -63,7 +91,15 @@ frame:SetScript("OnEvent", function(self, event, ...)
           destGUID,
           destName,
           destFlags,
+          spellId,
+          spellName,
           destRaidFlags = ...
+
+    if subEvent == "SPELL_CAST_SUCCESS" then
+        if WatchedSpells[spellName] then
+            playTheSong(WatchedSpells[spellName])
+        end
+    end
 
     if subEvent ~= "UNIT_DIED" then
         return
@@ -73,18 +109,18 @@ frame:SetScript("OnEvent", function(self, event, ...)
         return
     end
 
-    if IsPlayerInGroup(destName) == false then
+    if watchedPlayersInGroup < 2 then
         return
     end
 
     -- Remove realm name if present
     local player = strsplit("-", destName)
 
-    local sound = watchedPlayers[player]
+    local sounds = WatchedPlayers[player]
 
-    if watchedPlayers[player] then
-        PlaySoundFile(sound, "Master")
-        --PlayPlayerSound(sound)
+    if WatchedPlayers[player] then
+        local sound = sounds[random(#sounds)]
+        playTheSong(sound)
     end
 end)
 

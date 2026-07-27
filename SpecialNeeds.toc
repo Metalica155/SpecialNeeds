@@ -5,5 +5,12 @@
 ## License: All Rights Reserved
 ## Notes: Play songs for lulz
 ## Author: ME
+## SavedVariables: SpecialNeedsDB
+
+config.lua
+
+helpers.lua
+
+commands.lua
 
 SpecialNeeds.lua
