@@ -1,28 +1,3 @@
-local function IsPlayerInGroup(playerName)
-    local numMembers = GetNumGroupMembers()
-
-    if IsInRaid() then
-        for i = 1, numMembers do
-            local name = GetRaidRosterInfo(i)
-            if name == playerName then
-                return true
-            end
-        end
-    else
-        if UnitName("player") == playerName then
-            return true
-        end
-
-        for i = 1, GetNumSubgroupMembers() do
-            if UnitName("party"..i) == playerName then
-                return true
-            end
-        end
-    end
-
-    return false
-end
-
 function FindPlayer(name)
     name = name:lower()
 
@@ -80,8 +55,6 @@ end
 
 function PlaySnSound(index)
     local sound
-
-    print(index)
 
     index = tonumber(index)
 

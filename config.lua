@@ -9,9 +9,11 @@ WatchedPlayers = {
     ["Prosztakuksi"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\brain-fart.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\perfect-fart.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\bark-fart-sound.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\fart-with-extra-reverb.mp3",
     },
     ["Renaldoh"] = {
-        "Interface\\AddOns\\SpecialNeeds\\audio\\fahhhhhhhhhhhhhh.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\szeretlek-melindaaa.mp3",
     },
     ["Plaguebeard"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\d-meghal-jobban.mp3",
@@ -23,15 +25,22 @@ WatchedPlayers = {
     },
     ["Rezestóni"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\nem-vagyok-buzi.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\a-picsaba-miert.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\gechi.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\oh.mp3",
     },
     ["Messacree"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\nem-vagyok-buzi.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\az-elet-adta.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\OhMahGawd.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\injuries.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\garbage.mp3",
     },
     ["Birdlady"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\brain-fart.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\perfect-fart.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\bark-fart-sound.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\fart-with-extra-reverb.mp3",
     },
     ["Itacho"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\ack.mp3",
@@ -41,7 +50,10 @@ WatchedPlayers = {
          "Interface\\AddOns\\SpecialNeeds\\audio\\windows-shutdown.mp3",
     },
     ["Naefo"] = {
-        "Interface\\AddOns\\SpecialNeeds\\audio\\d-meghal-jobban.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\eric-cartman-legjobb-baratja.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\happy-happy-happy-cat.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\hello-im-under-the-water.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\spongebob-dolphin-censor.mp3",
     },
 }
 
