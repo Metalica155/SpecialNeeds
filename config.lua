@@ -31,7 +31,7 @@ WatchedPlayers = {
     },
     ["Messacree"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\nem-vagyok-buzi.mp3",
-        "Interface\\AddOns\\SpecialNeeds\\audio\\az-elet-adta.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\az-eletet-adta.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\OhMahGawd.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\injuries.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\garbage.mp3",
