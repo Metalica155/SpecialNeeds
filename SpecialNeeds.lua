@@ -65,8 +65,6 @@ frame:SetScript("OnEvent", function(self, event, ...)
           destFlags,
           destRaidFlags = ...
 
-    print(subEvent, destName)
-
     if subEvent ~= "UNIT_DIED" then
         return
     end
