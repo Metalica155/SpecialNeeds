@@ -68,14 +68,17 @@ frame:SetScript("OnEvent", function(self, event, ...)
         local senderName = sender:match("^[^-]+")
 
         if not IsLeaderOrAssistant(senderName) then
-            print("not lead skipping")
             return
         end
 
-        local command, index = strsplit(";", message)
+        local command, arg = strsplit(";", message)
 
         if command == "PLAY" then
-            PlaySnSound(index)
+            PlaySnSound(arg)
+        end
+
+        if command == "PLAYSOUND" then
+            playTheSong(arg)
         end
 
         return
@@ -116,11 +119,17 @@ frame:SetScript("OnEvent", function(self, event, ...)
     -- Remove realm name if present
     local player = strsplit("-", destName)
 
-    local sounds = WatchedPlayers[player]
-
-    if WatchedPlayers[player] then
-        local sound = sounds[random(#sounds)]
-        playTheSong(sound)
+    if not WatchedPlayers[player] then
+        return
     end
-end)
 
+    -- Only the leader chooses the sound.
+    if not IsLeaderOrAssistant(UnitName("player")) then
+        return
+    end
+
+    local sounds = WatchedPlayers[player]
+    local index = math.random(#sounds)
+
+    BroadcastPlayDeathSound(sounds[index])
+end)

@@ -1,19 +1,6 @@
 SLASH_DEATHSOUND1 = "/sn"
 SLASH_DEATHSOUND2 = "/specialneeds"
 
-local function BroadcastPlaySound(index)
-    local message = string.format("PLAY;%d", index)
-
-    if IsInRaid() then
-        SendAddonMessage("SpecialNeeds", message, "RAID")
-    elseif IsInGroup() then
-        SendAddonMessage("SpecialNeeds", message, "PARTY")
-    else
-        -- No group, just play locally.
-        PlaySnSound(index)
-    end
-end
-
 local function PrintInfo()
     print("|cff00ffffDeathSound Commands:|r")
     print("/sn status")
@@ -21,6 +8,7 @@ local function PrintInfo()
     print("/sn disable")
     print("/sn toggle")
     print("/sn test <player> <?index>")
+    print("/sn testing <?player>")
 end
 
 SlashCmdList["DEATHSOUND"] = function(msg)
@@ -63,6 +51,11 @@ SlashCmdList["DEATHSOUND"] = function(msg)
     elseif command == "play" then
         BroadcastPlaySound(args[1])
 
+    elseif command == "testing" then
+        Testing(args[1])
+
+    elseif command == "testcast" then
+        BroadcastPlayers(args)
     else
         PrintInfo()
     end

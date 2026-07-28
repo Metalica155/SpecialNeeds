@@ -53,6 +53,52 @@ function TestPlayer(name, index)
     PlaySoundFile(sound, "Master")
 end
 
+function Testing(playerName)
+    local players = {}
+
+    if playerName then
+        local player = FindPlayer(playerName)
+
+        if not player then
+            print("Unknown watched player: " .. playerName)
+            return
+        end
+
+        table.insert(players, player)
+    else
+        for player in pairs(WatchedPlayers) do
+            table.insert(players, player)
+        end
+
+        table.sort(players)
+    end
+
+    local delay = 0
+
+    for _, player in ipairs(players) do
+        local sounds = WatchedPlayers[player]
+
+        for index = 1, #sounds do
+            C_Timer.After(delay, function()
+                print(string.format(
+                    "|cff00ffff[SpecialNeeds]|r %s (%d/%d)",
+                    player,
+                    index,
+                    #sounds
+                ))
+
+                TestPlayer(player, index)
+            end)
+
+            delay = delay + 2
+        end
+    end
+
+    C_Timer.After(delay, function()
+        print("|cff00ffff[SpecialNeeds]|r Testing complete.")
+    end)
+end
+
 function PlaySnSound(index)
     local sound
 
@@ -109,4 +155,65 @@ function IsLeaderOrAssistant(name)
     end
 
     return false
+end
+
+function BroadcastPlaySound(index)
+    local message = string.format("PLAY;%d", index)
+
+    if IsInRaid() then
+        SendAddonMessage("SpecialNeeds", message, "RAID")
+    elseif IsInGroup() then
+        SendAddonMessage("SpecialNeeds", message, "PARTY")
+    else
+        -- No group, just play locally.
+        PlaySnSound(index)
+    end
+end
+
+function BroadcastPlayDeathSound(path)
+    local message = string.format("PLAYSOUND;%s", path)
+    SendAddonMessage(
+        "SpecialNeeds",
+        message,
+        IsInRaid() and "RAID" or "PARTY"
+    )
+end
+
+function BroadcastPlayers(players)
+    if #players == 0 then
+        print("Usage: /sn broadcast <player> [player] ...")
+        return
+    end
+
+    for _, name in ipairs(players) do
+        local player = FindPlayer(name)
+
+        if player then
+            local sounds = WatchedPlayers[player]
+            local index = math.random(#sounds)
+
+            local message = string.format(
+                "PLAYSOUND;%s",
+                sounds[index]
+            )
+
+            SendAddonMessage(
+                "SpecialNeeds",
+                message,
+                IsInRaid() and "RAID" or "PARTY"
+            )
+
+            print(string.format(
+                "[SpecialNeeds] Broadcasting %s (sound %d/%d)",
+                player,
+                index,
+                #sounds
+            ))
+        else
+            print(string.format(
+                "[SpecialNeeds] Unknown watched player '%s'",
+                name
+            ))
+        end
+    end
 end
