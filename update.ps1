@@ -34,20 +34,6 @@ function Get-AddonFolder {
         throw "Please select your Interface\AddOns folder."
     }
 
-    if (!(Test-Path (Join-Path $path "$AddonName.toc"))) {
-        Write-Host ""
-        Write-Host "Warning: This doesn't look like the addon folder." -ForegroundColor Yellow
-        Write-Host "You should select:"
-        Write-Host "...Tauri Launcher\Legion\Interface\AddOns"
-        Write-Host ""
-
-        $answer = Read-Host "Continue anyway? (y/N)"
-
-        if ($answer -ne "y") {
-            throw "Cancelled."
-        }
-    }
-
     $path | Set-Content $ConfigFile
 
     return $path
@@ -93,9 +79,10 @@ try {
     Write-Host ("Installed : " + $(if ($installedVersion) { $installedVersion } else { "Not installed" }))
     Write-Host "Latest    : $latestVersion"
 
-    if ($installedVersion -eq $latestVersion) {
+    if ($installedVersion.TrimStart("v") -eq $latestVersion) {
         Write-Host ""
         Write-Host "SpecialNeeds is already up to date!" -ForegroundColor Green
+        Read-Host "`nPress Enter to exit"
         return
     }
 
