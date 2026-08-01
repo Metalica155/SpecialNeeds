@@ -6,7 +6,20 @@ WatchedPlayers = {
          "Interface\\AddOns\\SpecialNeeds\\audio\\disappear.mp3",
          "Interface\\AddOns\\SpecialNeeds\\audio\\windows-shutdown.mp3",
     },
+    ["Manacookie"] = {
+         "Interface\\AddOns\\SpecialNeeds\\audio\\ack.mp3",
+         "Interface\\AddOns\\SpecialNeeds\\audio\\akrvastn.mp3",
+         "Interface\\AddOns\\SpecialNeeds\\audio\\fart-with-reverb.mp3",
+         "Interface\\AddOns\\SpecialNeeds\\audio\\disappear.mp3",
+         "Interface\\AddOns\\SpecialNeeds\\audio\\windows-shutdown.mp3",
+    },
     ["Prosztakuksi"] = {
+        "Interface\\AddOns\\SpecialNeeds\\audio\\brain-fart.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\perfect-fart.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\bark-fart-sound.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\fart-with-reverb.mp3",
+    },
+    ["Halknyögés"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\brain-fart.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\perfect-fart.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\bark-fart-sound.mp3",
@@ -24,6 +37,12 @@ WatchedPlayers = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\te-kurva.mp3",
     },
     ["Rezestóni"] = {
+        "Interface\\AddOns\\SpecialNeeds\\audio\\nem-vagyok-buzi.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\a-picsaba-miert.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\gechi.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\oh.mp3",
+    },
+    ["Zeropepsi"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\nem-vagyok-buzi.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\a-picsaba-miert.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\gechi.mp3",
