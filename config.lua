@@ -18,6 +18,7 @@ WatchedPlayers = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\perfect-fart.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\bark-fart-sound.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\fart-with-reverb.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\dry-fart.mp3",
     },
     ["Halknyögés"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\brain-fart.mp3",
@@ -27,6 +28,7 @@ WatchedPlayers = {
     },
     ["Renaldoh"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\szeretlek-melindaaa.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\pro-gamer.mp3",
     },
     ["Plaguebeard"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\d-meghal-jobban.mp3",
@@ -41,12 +43,14 @@ WatchedPlayers = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\a-picsaba-miert.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\gechi.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\oh.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\onyxia-wipe.mp3",
     },
     ["Zeropepsi"] = {
-        "Interface\\AddOns\\SpecialNeeds\\audio\\nem-vagyok-buzi.mp3",
+         "Interface\\AddOns\\SpecialNeeds\\audio\\nem-vagyok-buzi.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\a-picsaba-miert.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\gechi.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\oh.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\onyxia-wipe.mp3",
     },
     ["Messacree"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\nem-vagyok-buzi.mp3",
@@ -54,6 +58,10 @@ WatchedPlayers = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\OhMahGawd.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\injuries.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\garbage.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\junior.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\Omae-wa-mou.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\TAKARJON-BE.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\zambo.mp3",
     },
     ["Birdlady"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\brain-fart.mp3",
@@ -74,10 +82,35 @@ WatchedPlayers = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\hello-im-under-the-water.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\spongebob-dolphin-censor.mp3",
     },
+    ["Kiégettelek"] = {
+        "Interface\\AddOns\\SpecialNeeds\\audio\\bazdmeg-cigany.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\haladjunk-kocsogok.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\fejedre-huzom-a.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\tom-scream.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\see-lio-laugh.mp3",
+    },
+    ["Felképelek"] = {
+    },
+    ["Kitöröltelek"] = {
+        "Interface\\AddOns\\SpecialNeeds\\audio\\elkurtuk.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\eg-a-mvesz.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\kocsinak-littek.mp3",
+    },
+    ["Elvertelek"] = {
+        "Interface\\AddOns\\SpecialNeeds\\audio\\eric-cartman-legjobb-baratja.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\happy-happy-happy-cat.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\hello-im-under-the-water.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\spongebob-dolphin-censor.mp3",
+    },
 }
 
 WatchedSpells = {
     -- [137639] = "Interface\\AddOns\\SpecialNeeds\\audio\\yamate-kudesai.mp3",
+    -- [32182] = "Interface\\AddOns\\SpecialNeeds\\audio\\yamate-kudesai.mp3",
+    -- [16170] = "Interface\\AddOns\\SpecialNeeds\\audio\\yamate-kudesai.mp3",
+    -- [90355] = "Interface\\AddOns\\SpecialNeeds\\audio\\yamate-kudesai.mp3",
+    -- [230954] = "Interface\\AddOns\\SpecialNeeds\\audio\\yamate-kudesai.mp3",
+    -- [178208] = "Interface\\AddOns\\SpecialNeeds\\audio\\yamate-kudesai.mp3",
 }
 
 SnSounds = {
