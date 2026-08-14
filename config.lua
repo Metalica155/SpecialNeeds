@@ -63,6 +63,17 @@ WatchedPlayers = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\TAKARJON-BE.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\zambo.mp3",
     },
+    ["Sacre"] = {
+        "Interface\\AddOns\\SpecialNeeds\\audio\\nem-vagyok-buzi.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\az-eletet-adta-a-veret-adta.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\OhMahGawd.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\injuries.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\garbage.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\junior.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\Omae-wa-mou.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\TAKARJON-BE.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\zambo.mp3",
+    },
     ["Birdlady"] = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\brain-fart.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\perfect-fart.mp3",
@@ -87,7 +98,7 @@ WatchedPlayers = {
         "Interface\\AddOns\\SpecialNeeds\\audio\\haladjunk-kocsogok.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\fejedre-huzom-a.mp3",
         "Interface\\AddOns\\SpecialNeeds\\audio\\tom-scream.mp3",
-        "Interface\\AddOns\\SpecialNeeds\\audio\\see-lio-laugh.mp3",
+        "Interface\\AddOns\\SpecialNeeds\\audio\\sea-lion-laugh.mp3",
     },
     ["Felképelek"] = {
     },
